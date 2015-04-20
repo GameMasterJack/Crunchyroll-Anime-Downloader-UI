@@ -10,8 +10,11 @@ This piece of code downloads the first 50 episodes of One Piece in 360p.
 The equivalence being manually going to the webpage, copying the url and pasting every episode name in one at a time.
 
   > _start.bat http://www.crunchyroll.com/one-piece/episode-1-im-luffy-the-man-whos-gonna-be-king-of-the-pirates-650673
+  
   > _start.bat http://www.crunchyroll.com/one-piece/episode-2-enter-the-great-swordsman-pirate-hunter-roronoa-zoro-650675
+  
   > _start.bat http://www.crunchyroll.com/one-piece/episode-3-morgan-versus-luffy-whos-the-mysterious-pretty-girl-650677
+  
   > [etc.]
 
 As you can imagine this is A LOT of work. Making this method EXTREMELY MORE EFFECTIVE.
