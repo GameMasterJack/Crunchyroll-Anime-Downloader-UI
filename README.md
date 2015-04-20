@@ -23,4 +23,18 @@ If you only want to download a couple episodes you would do this:
   
 This downloades episodes 1, 3, 5 - 7, 9, 11, 16 - 20 in 480p
 
+If you do not know if a show exists on Crunchyroll.com the Validate command will help:
+  > Validate One Piece
+  
+          >> One Piece has a valid page on crunchyroll.com!
+  
+  
+  > Validate Romance Dawn
+  
+          >> Romance Dawn does not have a valid page on crunchyroll.com...
+  
+
+Known Bugs:
+  - If there are two shows for one show (Show Maybe: YES!: 1, 2, 3; Show Maybe: NO!:  2: 1, 2, 3) labeled differently the program will pick the latest one. (Assuming that that one has that episode on it) 
+
 
