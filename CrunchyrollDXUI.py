@@ -14,11 +14,11 @@ SETTINGS		= file(PATH +"\\" +"Settings.ini" ).readlines()
 QUALITY			= ''
 LANGUAGE = ''
 if  os.path.exists("login.py"):
-	system("del crunchyroll-xml-decoder")
-	system("copy login.py crunchyroll-xml-decoder/login.py")
-	system("del login.py")
-system("echo Echo @ECHO OFF >> make_cookies.bat")
-system("echo crunchy-xml-decoder\login.py yes")
+	os.system("del crunchyroll-xml-decoder/login.py")
+	os.system("copy login.py crunchyroll-xml-decoder/login.py")
+	os.system("del login.py")
+os.system("echo Echo @ECHO OFF >> make_cookies.bat")
+os.system("echo crunchy-xml-decoder/flogin.py yes")
 for i in SETTINGS[1]:
 	if i.isdigit():
 		QUALITY += i;
@@ -158,9 +158,9 @@ def grab(args):
 def download(url, episodeList, quality=QUALITY, language=LANGUAGE):
 	global QUALITY, LANGUAGE
 	if quality != QUALITY or language!=LANGUAGE:
-		system("echo [SETTINGS] > Settings.ini")
-		system("echo video_quality = " + str(quality) + "p >> Settings.ini")
-		system("echo language = " + language + " >> Settings.ini")
+		os.system("echo [SETTINGS] > Settings.ini")
+		os.system("echo video_quality = " + str(quality) + "p >> Settings.ini")
+		os.system("echo language = " + language + " >> Settings.ini")
 		
 	skip = -1
 	for i in range(0, len(episodeList)):
@@ -175,15 +175,15 @@ def download(url, episodeList, quality=QUALITY, language=LANGUAGE):
 					downloadEpisode([url, j], sysargs=0)
 		else:
 			downloadEpisode([url, episodeList[i]], sysargs=0)
-	system("echo [SETTINGS] > Settings.ini")
-	system("echo video_quality = " + str(QUALITY) + "p >> Settings.ini")
-	system("echo language = " + LANGUAGE + " >> Settings.ini")
+	os.system("echo [SETTINGS] > Settings.ini")
+	os.system("echo video_quality = " + str(QUALITY) + "p >> Settings.ini")
+	os.system("echo language = " + LANGUAGE + " >> Settings.ini")
 		
 def setX(lang=LANGUAGE, quality=QUALITY):
 	global LANGUAGE, QUALITY
-	system("echo [SETTINGS] > Settings.ini")
-	system("echo video_quality = " + str(quality) + "p >> Settings.ini")
-	system("echo language = " + lang + " >> Settings.ini")
+	os.system("echo [SETTINGS] > Settings.ini")
+	os.system("echo video_quality = " + str(quality) + "p >> Settings.ini")
+	os.system("echo language = " + lang + " >> Settings.ini")
 	if quality != QUALITY:
 		print("	>>   Quality changed from " + str(QUALITY) + "p to " + str(quality))
 		QUALITY =  quality
@@ -226,7 +226,7 @@ def userInterface():
 					request.append(raw_input("	>>   Password > "))
 			login(request[1], request[2])
 		elif request[0] == "System":
-			system("".join([i + ' ' for i in request[1:len(request)]]))
+			os.system("".join([i + ' ' for i in request[1:len(request)]]))
 			print("")
 		elif request[0] == "Exit":
 			running = ternary(raw_input("	>>   Are you sure you want to exit? > ").capitalize()[0] == "Y", False, True)
